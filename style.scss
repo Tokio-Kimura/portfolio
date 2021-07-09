@@ -1,0 +1,520 @@
+@import 'variables';
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: $bg1-color;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1080px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+.ttl {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 40px;
+}
+
+#me {
+    width: 70%;
+    border-radius: 50%;
+    box-shadow: 10px 0 20px $a-color, -10px 0 20px $a-color, 0 10px 20px $a-color, 0 -10px 20px $a-color;
+}
+
+/*loading*/
+#splash {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: $main-color;
+    text-align: center;
+    color: #fff;
+
+
+    &_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 999;
+        transform: translate(-50%, -50%);
+        color: $a-color;
+        width: 100%;
+    }
+}
+
+//#splash
+
+
+.loader_cover {
+    width: 100%;
+    height: 50%;
+    background-color: $a-color;
+    transition: all.2s cubic-bezier(.04, .435, .315, .9);
+    transform: scaleY(1);
+
+    &-up {
+        transform-origin: center top;
+    }
+
+    &-down {
+        position: absolute;
+        bottom: 0;
+        transform-origin: center bottom;
+    }
+}
+
+//.loader_cover
+
+.coveranime {
+    transform: scaleY(0);
+}
+
+
+/* heder*/
+#header {
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    background: $a-color;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+    &.UpMove {
+        animation: UpAnime 0.5s forwards;
+    }
+
+    &.DownMove {
+        animation: DownAnime 0.5s forwards;
+    }
+}
+
+
+@keyframes UpAnime {
+    from {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes DownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    margin-right: 20px;
+
+    & ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        & li a {
+            text-decoration: none;
+            color: #666;
+            padding: 10px;
+        }
+
+    }
+}
+
+//nav
+nav ul li.current a,
+nav ul li a:hover,
+nav ul li a:active {
+    color: white;
+}
+
+//header
+
+
+.area_top_view {
+    background: url(jpg/top.jpg?20210419) no-repeat center bottom;
+    background-size: cover;
+
+    & > .container {
+        height: 800px;
+        max-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+//area_top_view
+
+/*contents*/
+#about,
+#skills,
+#gallery,
+#contact {
+    padding: 80px 0;
+}
+
+/*head*/
+.head_home {
+    margin: 0 0 100px;
+    display: flex;
+    justify-content: center;
+
+    &.ttl {
+        font: 400 56px/1em 'futura PT', 'noto sans japanese', sans-serif;
+        padding: 0 0 15px;
+        position: relative;
+    }
+}
+
+/*トップビュー*/
+
+
+/*2分割レイアウト*/
+@media screen and (min-width:540px) {
+    .layout_2_div {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > div {
+            width: 50%;
+        }
+    }
+}
+
+
+/*text*/
+.text_home {
+    & .text_ttl {
+        font: 500 32px/1em 'futura PT', 'noto sans japanese', sans-serif;
+        margin: 30px 0 20px 0;
+    }
+}
+
+/*グラフ*/
+.graph-cont {}
+
+.skill_bar {
+    height: 30px;
+    max-width: 800px;
+    margin: 0 2% 10px 2%;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $bg1-color;
+    padding: 0 0 0 10px;
+    position: relative;
+    z-index: 0;
+    border-radius: 15px;
+}
+
+.skill_bar::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 30px;
+    top: 0;
+    z-index: -1;
+    background: $bg1-color;
+    border-radius: 15px;
+}
+
+.skill_bar::after {
+    content: '';
+    height: 30px;
+    transition: 0.7s;
+    display: block;
+    width: 100%;
+    -webkit-animation: skill_bar-before 1 3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+@-webkit-keyframes skill_bar-before {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.bar1::after {
+    max-width: 80%;
+    background: #FF9494;
+}
+
+.bar2::after {
+    max-width: 80%;
+    background: #57C6FF;
+}
+
+.bar3::after {
+    max-width: 70%;
+    background: #FFD447;
+}
+
+.bar4::after {
+    max-width: 60%;
+    background: #A291B6;
+}
+
+.html {
+    color: #FF9494;
+}
+
+.css {
+    color: #57C6FF;
+}
+
+.js {
+    color: #FFD447;
+}
+
+.php {
+    color: #A291B6;
+}
+
+
+/*バックグラウンド*/
+.bg_pink {
+    background: $bg2-color;
+}
+
+/*ギャラリー*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1080px;
+    height: auto;
+    border-radius: 30px;
+    border: solid $a-color 2px;
+    margin-bottom: 20px;
+}
+
+.card {
+    max-width: 300px;
+    height: 570px;
+    margin: 10px;
+    border-radius: 30px;
+    border: solid $a-color 2px;
+    overflow: hidden;
+
+    & img {
+        max-width: 300px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    &:hover {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        transform: translateY(-10px);
+        transition-duration: 0.5s;
+    }
+}
+
+.setumei {
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+
+    & h2 {
+        text-align: center;
+    }
+
+    & h3 {
+        margin: 10px;
+        padding: 10px;
+        background-color: $bg2-color;
+        border-radius: 10px;
+
+    }
+
+    & p {
+        margin: 10px;
+        line-height: 1.5em;
+    }
+}
+
+/*お問合せフォーム*/
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    font-size: 1em;
+    padding: 15px 10px 10px;
+    font-family: 'sourse sans Pro', arial, suns-serif;
+    border: 1px solid $main-color;
+    background: #d7d7d7;
+    color: white;
+    border-radius: 10px;
+    background-clip: padding-box;
+    width: 80%;
+    max-width: 600px;
+
+    &::placeholder {
+        color: white;
+    }
+}
+
+button {
+    min-width: 150px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-family: 'sourse sans Pro', arial, suns-serif;
+    font-size: 16px;
+    background-color: $main-color;
+    padding: 12px 45px;
+    border-radius: 10px;
+    border: 1px solid $a-color;
+    transition: .5S;
+    display: inline-block;
+    cursor: pointer;
+    width: 30%;
+    color: white;
+
+    &:hover {
+        background-color: $a-color;
+    }
+}
+
+#title {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 200px;
+    color: $a-color;
+}
+
+#sub_title {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 100px;
+    color: #FF54E1;
+}
+
+.text_bg {
+    text-align: center;
+}
+
+.sp {
+    display: none;
+}
+
+@media screen and (max-width:1108px) {
+    .card {
+        margin: 10px auto;
+
+    }
+}
+
+@media screen and (max-width:940px) {
+    #title {
+        font-size: 150px;
+    }
+
+}
+
+@media screen and (max-width:720px) {
+    #title {
+        font-size: 90px;
+    }
+
+    #sub_title {
+        font-size: 60px
+    }
+
+}
+
+@media screen and (max-width:550px) {
+    #title {
+        font-size: 90px;
+    }
+
+    #sub_title {
+        font-size: 50px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .sp {
+        display: block;
+    }
+}
+
+@media screen and (max-width:410px) {
+
+    #title {
+        font-size: 60px;
+    }
+
+    #sub_title {
+        font-size: 30px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .card:hover {
+        display: none;
+    }
+
+}

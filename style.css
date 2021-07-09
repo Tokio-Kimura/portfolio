@@ -1,0 +1,456 @@
+@charset "UTF-8";
+/* line 6, /Users/tokio/Desktop/portforio/_variables.scss */
+.logo {
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 50px; }
+
+/* line 3, /Users/tokio/Desktop/portforio/style.scss */
+* {
+  margin: 0; }
+
+/* line 7, /Users/tokio/Desktop/portforio/style.scss */
+body {
+  background-color: #E8FFF3; }
+
+/* line 11, /Users/tokio/Desktop/portforio/style.scss */
+a {
+  color: #000;
+  text-decoration: none; }
+
+/* line 16, /Users/tokio/Desktop/portforio/style.scss */
+ul {
+  list-style: none; }
+
+/* line 20, /Users/tokio/Desktop/portforio/style.scss */
+.container {
+  max-width: 1080px;
+  padding: 0 40px;
+  margin: 0 auto; }
+
+/* line 26, /Users/tokio/Desktop/portforio/style.scss */
+.ttl {
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 40px; }
+
+/* line 31, /Users/tokio/Desktop/portforio/style.scss */
+#me {
+  width: 70%;
+  border-radius: 50%;
+  box-shadow: 10px 0 20px #FFACDA, -10px 0 20px #FFACDA, 0 10px 20px #FFACDA, 0 -10px 20px #FFACDA; }
+
+/*loading*/
+/* line 38, /Users/tokio/Desktop/portforio/style.scss */
+#splash {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #00FFCC;
+  text-align: center;
+  color: #fff; }
+  /* line 48, /Users/tokio/Desktop/portforio/style.scss */
+  #splash_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    color: #FFACDA;
+    width: 100%; }
+
+/* line 62, /Users/tokio/Desktop/portforio/style.scss */
+.loader_cover {
+  width: 100%;
+  height: 50%;
+  background-color: #FFACDA;
+  transition: all 0.2s cubic-bezier(0.04, 0.435, 0.315, 0.9);
+  transform: scaleY(1); }
+  /* line 69, /Users/tokio/Desktop/portforio/style.scss */
+  .loader_cover-up {
+    transform-origin: center top; }
+  /* line 73, /Users/tokio/Desktop/portforio/style.scss */
+  .loader_cover-down {
+    position: absolute;
+    bottom: 0;
+    transform-origin: center bottom; }
+
+/* line 82, /Users/tokio/Desktop/portforio/style.scss */
+.coveranime {
+  transform: scaleY(0); }
+
+/* heder*/
+/* line 88, /Users/tokio/Desktop/portforio/style.scss */
+#header {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFACDA;
+  color: white;
+  text-align: center;
+  padding: 20px; }
+  /* line 102, /Users/tokio/Desktop/portforio/style.scss */
+  #header.UpMove {
+    animation: UpAnime 0.5s forwards; }
+  /* line 106, /Users/tokio/Desktop/portforio/style.scss */
+  #header.DownMove {
+    animation: DownAnime 0.5s forwards; }
+
+@keyframes UpAnime {
+  from {
+    opacity: 0.9;
+    transform: translateY(0); }
+  to {
+    opacity: 0;
+    transform: translateY(-100px); } }
+
+@keyframes DownAnime {
+  from {
+    opacity: 0;
+    transform: translateY(-100px); }
+  to {
+    opacity: 0.9;
+    transform: translateY(0); } }
+
+/* line 136, /Users/tokio/Desktop/portforio/style.scss */
+nav {
+  margin-right: 20px; }
+  /* line 139, /Users/tokio/Desktop/portforio/style.scss */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; }
+    /* line 144, /Users/tokio/Desktop/portforio/style.scss */
+    nav ul li a {
+      text-decoration: none;
+      color: #666;
+      padding: 10px; }
+
+/* line 154, /Users/tokio/Desktop/portforio/style.scss */
+nav ul li.current a,
+nav ul li a:hover,
+nav ul li a:active {
+  color: white; }
+
+/* line 163, /Users/tokio/Desktop/portforio/style.scss */
+.area_top_view {
+  background: url(jpg/top.jpg?20210419) no-repeat center bottom;
+  background-size: cover; }
+  /* line 167, /Users/tokio/Desktop/portforio/style.scss */
+  .area_top_view > .container {
+    height: 800px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+
+/*contents*/
+/* line 180, /Users/tokio/Desktop/portforio/style.scss */
+#about,
+#skills,
+#gallery,
+#contact {
+  padding: 80px 0; }
+
+/*head*/
+/* line 188, /Users/tokio/Desktop/portforio/style.scss */
+.head_home {
+  margin: 0 0 100px;
+  display: flex;
+  justify-content: center; }
+  /* line 193, /Users/tokio/Desktop/portforio/style.scss */
+  .head_home.ttl {
+    font: 400 56px/1em 'futura PT', 'noto sans japanese', sans-serif;
+    padding: 0 0 15px;
+    position: relative; }
+
+/*トップビュー*/
+/*2分割レイアウト*/
+@media screen and (min-width: 540px) {
+  /* line 205, /Users/tokio/Desktop/portforio/style.scss */
+  .layout_2_div {
+    display: flex;
+    flex-wrap: wrap; }
+    /* line 209, /Users/tokio/Desktop/portforio/style.scss */
+    .layout_2_div > div {
+      width: 50%; } }
+
+/*text*/
+/* line 218, /Users/tokio/Desktop/portforio/style.scss */
+.text_home .text_ttl {
+  font: 500 32px/1em 'futura PT', 'noto sans japanese', sans-serif;
+  margin: 30px 0 20px 0; }
+
+/*グラフ*/
+/* line 227, /Users/tokio/Desktop/portforio/style.scss */
+.skill_bar {
+  height: 30px;
+  max-width: 800px;
+  margin: 0 2% 10px 2%;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #E8FFF3;
+  padding: 0 0 0 10px;
+  position: relative;
+  z-index: 0;
+  border-radius: 15px; }
+
+/* line 241, /Users/tokio/Desktop/portforio/style.scss */
+.skill_bar::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  top: 0;
+  z-index: -1;
+  background: #E8FFF3;
+  border-radius: 15px; }
+
+/* line 253, /Users/tokio/Desktop/portforio/style.scss */
+.skill_bar::after {
+  content: '';
+  height: 30px;
+  transition: 0.7s;
+  display: block;
+  width: 100%;
+  -webkit-animation: skill_bar-before 1 3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 15px; }
+
+@-webkit-keyframes skill_bar-before {
+  0% {
+    width: 0px; }
+  100% {
+    width: 100%; } }
+
+/* line 277, /Users/tokio/Desktop/portforio/style.scss */
+.bar1::after {
+  max-width: 80%;
+  background: #FF9494; }
+
+/* line 282, /Users/tokio/Desktop/portforio/style.scss */
+.bar2::after {
+  max-width: 80%;
+  background: #57C6FF; }
+
+/* line 287, /Users/tokio/Desktop/portforio/style.scss */
+.bar3::after {
+  max-width: 70%;
+  background: #FFD447; }
+
+/* line 292, /Users/tokio/Desktop/portforio/style.scss */
+.bar4::after {
+  max-width: 60%;
+  background: #A291B6; }
+
+/* line 297, /Users/tokio/Desktop/portforio/style.scss */
+.html {
+  color: #FF9494; }
+
+/* line 301, /Users/tokio/Desktop/portforio/style.scss */
+.css {
+  color: #57C6FF; }
+
+/* line 305, /Users/tokio/Desktop/portforio/style.scss */
+.js {
+  color: #FFD447; }
+
+/* line 309, /Users/tokio/Desktop/portforio/style.scss */
+.php {
+  color: #A291B6; }
+
+/*バックグラウンド*/
+/* line 315, /Users/tokio/Desktop/portforio/style.scss */
+.bg_pink {
+  background: #FFEAF6; }
+
+/*ギャラリー*/
+/* line 320, /Users/tokio/Desktop/portforio/style.scss */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
+
+/* line 326, /Users/tokio/Desktop/portforio/style.scss */
+.card_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1080px;
+  height: auto;
+  border-radius: 30px;
+  border: solid #FFACDA 2px;
+  margin-bottom: 20px; }
+
+/* line 337, /Users/tokio/Desktop/portforio/style.scss */
+.card {
+  max-width: 300px;
+  height: 570px;
+  margin: 10px;
+  border-radius: 30px;
+  border: solid #FFACDA 2px;
+  overflow: hidden; }
+  /* line 345, /Users/tokio/Desktop/portforio/style.scss */
+  .card img {
+    max-width: 300px;
+    height: auto;
+    overflow: hidden; }
+  /* line 351, /Users/tokio/Desktop/portforio/style.scss */
+  .card:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    transition-duration: 0.5s; }
+
+/* line 358, /Users/tokio/Desktop/portforio/style.scss */
+.setumei {
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto; }
+  /* line 363, /Users/tokio/Desktop/portforio/style.scss */
+  .setumei h2 {
+    text-align: center; }
+  /* line 367, /Users/tokio/Desktop/portforio/style.scss */
+  .setumei h3 {
+    margin: 10px;
+    padding: 10px;
+    background-color: #FFEAF6;
+    border-radius: 10px; }
+  /* line 375, /Users/tokio/Desktop/portforio/style.scss */
+  .setumei p {
+    margin: 10px;
+    line-height: 1.5em; }
+
+/*お問合せフォーム*/
+/* line 382, /Users/tokio/Desktop/portforio/style.scss */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center; }
+
+/* line 388, /Users/tokio/Desktop/portforio/style.scss */
+input {
+  margin-bottom: 10px; }
+
+/* line 392, /Users/tokio/Desktop/portforio/style.scss */
+textarea {
+  height: 100px;
+  margin-bottom: 10px; }
+
+/* line 397, /Users/tokio/Desktop/portforio/style.scss */
+input,
+textarea {
+  font-size: 1em;
+  padding: 15px 10px 10px;
+  font-family: 'sourse sans Pro', arial, suns-serif;
+  border: 1px solid #00FFCC;
+  background: #d7d7d7;
+  color: white;
+  border-radius: 10px;
+  background-clip: padding-box;
+  width: 80%;
+  max-width: 600px; }
+  /* line 410, /Users/tokio/Desktop/portforio/style.scss */
+  input::placeholder,
+  textarea::placeholder {
+    color: white; }
+
+/* line 415, /Users/tokio/Desktop/portforio/style.scss */
+button {
+  min-width: 150px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-family: 'sourse sans Pro', arial, suns-serif;
+  font-size: 16px;
+  background-color: #00FFCC;
+  padding: 12px 45px;
+  border-radius: 10px;
+  border: 1px solid #FFACDA;
+  transition: .5S;
+  display: inline-block;
+  cursor: pointer;
+  width: 30%;
+  color: white; }
+  /* line 431, /Users/tokio/Desktop/portforio/style.scss */
+  button:hover {
+    background-color: #FFACDA; }
+
+/* line 436, /Users/tokio/Desktop/portforio/style.scss */
+#title {
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 200px;
+  color: #FFACDA; }
+
+/* line 442, /Users/tokio/Desktop/portforio/style.scss */
+#sub_title {
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 100px;
+  color: #FF54E1; }
+
+/* line 448, /Users/tokio/Desktop/portforio/style.scss */
+.text_bg {
+  text-align: center; }
+
+/* line 452, /Users/tokio/Desktop/portforio/style.scss */
+.sp {
+  display: none; }
+
+@media screen and (max-width: 1108px) {
+  /* line 457, /Users/tokio/Desktop/portforio/style.scss */
+  .card {
+    margin: 10px auto; } }
+
+@media screen and (max-width: 940px) {
+  /* line 464, /Users/tokio/Desktop/portforio/style.scss */
+  #title {
+    font-size: 150px; } }
+
+@media screen and (max-width: 720px) {
+  /* line 471, /Users/tokio/Desktop/portforio/style.scss */
+  #title {
+    font-size: 90px; }
+  /* line 475, /Users/tokio/Desktop/portforio/style.scss */
+  #sub_title {
+    font-size: 60px; } }
+
+@media screen and (max-width: 550px) {
+  /* line 482, /Users/tokio/Desktop/portforio/style.scss */
+  #title {
+    font-size: 90px; }
+  /* line 486, /Users/tokio/Desktop/portforio/style.scss */
+  #sub_title {
+    font-size: 50px; }
+  /* line 490, /Users/tokio/Desktop/portforio/style.scss */
+  .logo {
+    display: none; }
+  /* line 494, /Users/tokio/Desktop/portforio/style.scss */
+  .sp {
+    display: block; } }
+
+@media screen and (max-width: 410px) {
+  /* line 501, /Users/tokio/Desktop/portforio/style.scss */
+  #title {
+    font-size: 60px; }
+  /* line 505, /Users/tokio/Desktop/portforio/style.scss */
+  #sub_title {
+    font-size: 30px; }
+  /* line 509, /Users/tokio/Desktop/portforio/style.scss */
+  nav ul li a {
+    font-size: 13px;
+    padding: 5px; } }
+
+@media screen and (max-width: 340px) {
+  /* line 516, /Users/tokio/Desktop/portforio/style.scss */
+  .card:hover {
+    display: none; } }
+
+/*# sourceMappingURL=style.css.map */
